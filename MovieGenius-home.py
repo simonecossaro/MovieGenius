@@ -31,6 +31,7 @@ if (b and st.session_state.qwerty == "child"):
             
 if r:
     st.write('Ecco le raccomandazioni')
+    b2 = st.button('Go to recommendations')
     
     
 
