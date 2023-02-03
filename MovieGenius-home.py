@@ -4,6 +4,14 @@ import DatasetInspection as di
 import pandas as pd
 import numpy as np
 
+############################# REDIRECT TO PAGE  ############################
+def nav_to(url):
+    nav_script = """
+                    <meta http-equiv="refresh" content="0; url='%s'">
+                 """ % (url)
+    st.write(nav_script, unsafe_allow_html=True)
+############################################################################
+
 st.set_page_config(page_title="MovieGenius")
 
             
@@ -23,34 +31,7 @@ with placeholder.container():
     b = st.button('Go to recommendations')
     
 if b:
-    placeholder.empty()
-    for_child = False
-    if (st.session_state['tipo'] == 'child'):
-            for_child = True
-    tMax = 600
-    if (st.session_state['time'] == "limited"):
-            tMax = st.session_state['minutes']
-    m = mr.MovieRecommendationSystem()
-    recommended = m.recommend(for_child, st.session_state['mood'], st.session_state['film_target'], tMax )
-    listRecom = recommended['title'].values
-    listOverview = []
-    st.write(f'''
-                 <h1> Movie recommendation App </h1><h2> Recommended movies: </h2>
-             ''' , unsafe_allow_html=True)
-    for i in range(len(listRecom)):
-            value = di.trovaOverview(listRecom[i])
-            listOverview.append(value)
-    col1, col2 = st.columns(2)
-    with col1:
-            for i in range(0,10):
-                        st.write(f'''
-                                     <div > <big><b>%d -</b>  %s </big>
-                                    </div>
-                                    ''' % (i+1, listRecom[i]), unsafe_allow_html=True)
-    with col2:
-             option= st.selectbox("Read the overview of", (listRecom[0],listRecom[1],listRecom[2],listRecom[3],listRecom[4],listRecom[5],listRecom[6],
-                                                     listRecom[7],listRecom[8],listRecom[9]))
-             st.write(di.trovaOverview(option))
+    nav_to()
         
    
                         
