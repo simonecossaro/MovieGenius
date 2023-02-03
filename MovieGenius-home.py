@@ -25,12 +25,10 @@ if (b and st.session_state.qwerty == "child"):
         st.text_input('Here you can name a movie similar to the one you want to watch (*optional*)', key="zxcvbn")                   
         st.radio("How much time do you have?", ["infinite","limited"], key="minutes")
         b1 = st.button('Go to recommendations')
-        if b1:
-            placeholder1.empty()
-            r = True
-          
-if r:
-     st.write('Ecco le raccomandazioni')
+        
+if b1:
+    placeholder1.empty()
+    st.write('Ecco le raccomandazioni')
         
     
 
