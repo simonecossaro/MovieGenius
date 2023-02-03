@@ -1,63 +1,31 @@
 import streamlit as st
+import MovieRecommendationSystem as mr
 
 st.set_page_config(page_title="MovieGenius")
 
-def childpage():
-    placeholder3 = st.empty()
-    with placeholder3.container():
-        st.text_input('Here you can name a movie similar to the one you want to watch (*optional*)', key="zxcvbn")                   
-        st.radio("How much time do you have?", ["infinite","limited"], key="minutes")
-        b1 = st.button('Go to recommendations')
-        if b1:
-            placeholder3.empty()
-            
-def recommendationpage():
-    placeholder4 = st.empty()
-    with placeholder4.container():
-        st.write('Ecco i film raccomandati')
             
 mood_list = ["laugh", "cry","love","adventure","fear","adrenaline","fantasy","science fiction","random"]
 
-st.write(f'''
-           <h1> Movie Genius </h1><h2> </h2>
-          ''' , unsafe_allow_html=True)
-
 placeholder = st.empty()
 with placeholder.container():
-    st.radio( "Are you an adult or a child?" , ["adult", "child"], key="qwerty")
-    b = st.button('Next')
-
-if (b and st.session_state.qwerty == "child"):
+    st.write(f'''
+           <h1> Movie Genius </h1><h2> </h2>
+          ''' , unsafe_allow_html=True)
+    st.session_state['tipo'] = st.radio( "Are you an adult or a child?" , ["adult", "child"])
+    st.session_state['mood'] = st.radio('Which emotion would you like to try?', mood_list)
+    st.session_state['film_target'] = st.text_input('Which movie is similar to the one you want to watch? (*optional*)')
+    st.session_state['time'] = st.radio("How much time do you have?", ["infinite","limited"])
+    if (st.session_state.time == "limited"):
+        st.session_state['minutes'] = st.slider('Select maximum minutes', 0, 360, 0)
+    b = st.button('Go to recommendations')
+    
+if b:
     placeholder.empty()
-    childpage()
-    recommendationpage()
-                    
-            
-                
+    st.write(st.session_state['tipo'])
+    st.write(st.session_state['mood'])
+    st.write(st.session_state['film_target'])
+    st.write(st.session_state['time'])
+    st.write(st.session_state['minutes'])
+         
 
-    
-
-            
-            
-  
-
- 
-
-
-      
-    
-  
-
-    
-    
-
-                     
-                      
-                
-        
-        
-           
-
-    
-
-    
+     
