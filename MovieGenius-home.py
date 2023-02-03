@@ -6,7 +6,7 @@ def recommendationpage():
     st.write('Film raccomandati')
     b3 = st.button('exit')
     
-
+r = False
 mood_list = ["laugh", "cry","love","adventure","fear","adrenaline","fantasy","science fiction","random"]
 
 st.write(f'''
@@ -27,7 +27,10 @@ if (b and st.session_state.qwerty == "child"):
         b1 = st.button('Go to recommendations')
         if b1:
             placeholder1.empty()
-            st.write('Ecco le raccomandazioni')
+            r = True
+          
+if r:
+     st.write('Ecco le raccomandazioni')
         
     
 
