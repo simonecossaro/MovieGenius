@@ -31,7 +31,7 @@ with placeholder.container():
     b = st.button('Go to recommendations')
     
 if b:
-    nav_to()
+    nav_to('https://simonecossaro-moviegenius-output-mv1sij.streamlit.app')
         
    
                         
