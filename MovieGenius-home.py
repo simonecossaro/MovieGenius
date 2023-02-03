@@ -1,15 +1,29 @@
 import streamlit as st
 
-st.set_page_config(page_title="Movie recommendation")
+st.set_page_config(page_title="MovieGenius")
 
 placeholder = st.empty()
 
 with placeholder.container():
   st.write(f'''
-                 <h1> Movie recommendation App </h1><h2> Let's start with your age </h2>
+                 <h1> Movie Genius </h1><h2> </h2>
              ''' , unsafe_allow_html=True)
   st.radio( "Are you an adult or a child?" , ["adult", "child"], key="qwerty")
+  b = st.button('Next')
   
-if st.session_state.qwerty == "child":
+if (b and st.session_state.qwerty == "child"):
     placeholder.empty()
-    st.write('Ciao bambino')
+    placeholder1 = st.empty()
+    
+with placeholder1.container():
+  st.write('Hello child')
+
+if (b and st.session_state.qwerty == "adult"):
+    placeholder.empty()
+    placeholder2 = st.empty()
+           
+with placeholder2.container():
+  st.write('Hello adult')
+    
+
+    
