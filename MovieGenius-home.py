@@ -2,6 +2,26 @@ import streamlit as st
 
 st.set_page_config(page_title="MovieGenius")
 
+def childpage():
+   placeholder1 = st.empty()
+   with placeholder1.container():
+    st.write('Ciao bambino')
+    
+def adultpage():
+   placeholder2 = st.empty()
+   with placeholder2.container():
+    st.radio( "What do you want to feel by watching the movie?" , mood_list, key="asdfgh")
+        
+        st.text_input('Here you can name a movie similar to the one you want to watch (*optional*)', key="zxcvbn")
+                      
+        st.radio("How much time do you have?", ["infinite","limited"], key="minutes")
+                      
+        b2 = st.button('Go to recommendations')
+        if b2:
+                      placeholder2.empty()
+                      st.write('Film raccomandati')
+    
+
 mood_list = ["laugh", "cry","love","adventure","fear","adrenaline","fantasy","science fiction","random"]
 
 placeholder = st.empty()
@@ -15,24 +35,11 @@ with placeholder.container():
   
 if (b and st.session_state.qwerty == "child"):
     placeholder.empty()
-    placeholder1 = st.empty()
-    with placeholder1.container():
-      st.write('Hello child')
+    childpage()
     
 if (b and st.session_state.qwerty == "adult"):
     placeholder.empty()
-    placeholder2 = st.empty()
-    with placeholder2.container():
-        st.radio( "What do you want to feel by watching the movie?" , mood_list, key="asdfgh")
-        
-        st.text_input('Here you can name a movie similar to the one you want to watch (*optional*)', key="zxcvbn")
-                      
-        st.radio("How much time do you have?", ["infinite","limited"], key="minutes")
-                      
-        b2 = st.button('Go to recommendations')
-        if b2:
-                      placeholder2.empty()
-                      st.write('Film raccomandati')
+    adultpage()
                      
                       
                 
