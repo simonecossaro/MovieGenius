@@ -2,6 +2,8 @@ import streamlit as st
 
 st.set_page_config(page_title="MovieGenius")
 
+mood_list = ["laugh", "cry","love","adventure","fear","adrenaline","fantasy","science fiction","random"]
+
 placeholder = st.empty()
 
 with placeholder.container():
@@ -21,7 +23,7 @@ if (b and st.session_state.qwerty == "adult"):
     placeholder.empty()
     placeholder2 = st.empty()
     with placeholder2.container():
-      st.write('Hello adult')
+       st.radio( "What do you want to feel by watching the movie?" , mood_list, key="asdfgh")
            
 
     
