@@ -3,8 +3,10 @@ import streamlit as st
 st.set_page_config(page_title="MovieGenius")
 
 def recommendationpage():
-    st.write('Film raccomandati')
-    b3 = st.button('exit')
+    placeholder3 = st.empty()
+    with placeholder3.container():
+        st.write('Film raccomandati')
+        b3 = st.button('exit')
     
 r = False
 mood_list = ["laugh", "cry","love","adventure","fear","adrenaline","fantasy","science fiction","random"]
@@ -26,13 +28,9 @@ if (b and st.session_state.qwerty == "child"):
         st.radio("How much time do you have?", ["infinite","limited"], key="minutes")
         b1 = st.button('Go to recommendations')
         if b1:
-            r = True
             placeholder1.empty()
-            
-if r:
-    st.write('Ecco le raccomandazioni')
-    b2 = st.button('Go to recommendations')
-    
+            recommendationpage()
+
     
 
             
