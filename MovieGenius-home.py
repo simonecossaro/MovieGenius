@@ -23,7 +23,7 @@ def adultpage():
                       
     st.radio("How much time do you have?", ["infinite","limited"], key="minutes")
                       
-    if st.button('Go to recommendations')
+    if st.button('Go to recommendations'):
          placeholder2.empty()
          recommendationpage()
     
