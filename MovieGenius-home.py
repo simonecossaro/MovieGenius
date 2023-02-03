@@ -28,8 +28,15 @@ if (b and st.session_state.qwerty == "child"):
         st.radio("How much time do you have?", ["infinite","limited"], key="minutes")
         b1 = st.button('Go to recommendations')
         if b1:
+            placeholder3 = st.empty()
             placeholder1.empty()
-            recommendationpage()
+            with placeholder3.container():
+                st.write('Film raccomandati')
+                b3 = st.button('exit')
+         
+                    
+            
+                
 
     
 
