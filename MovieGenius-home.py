@@ -2,6 +2,12 @@ import streamlit as st
 
 st.set_page_config(page_title="MovieGenius")
 
+def recommendationpage():
+   placeholder3 = st.empty()
+   with placeholder3.container():
+    st.write('Film raccomandati')
+   
+
 def childpage():
    placeholder1 = st.empty()
    with placeholder1.container():
@@ -19,7 +25,7 @@ def adultpage():
     b2 = st.button('Go to recommendations')
     if b2:
          placeholder2.empty()
-         st.write('Film raccomandati')
+         recommendationpage()
     
 
 mood_list = ["laugh", "cry","love","adventure","fear","adrenaline","fantasy","science fiction","random"]
