@@ -3,8 +3,6 @@ import streamlit as st
 st.set_page_config(page_title="MovieGenius")
 
 def recommendationpage():
-   placeholder3 = st.empty()
-   with placeholder3.container():
     st.write('Film raccomandati')
     b3 = st.button('exit')
     
@@ -31,8 +29,8 @@ with placeholder.container():
    st.radio("How much time do you have?", ["infinite","limited"], key="minutes")
    b1 = st.button('Go to recommendations')
 
-if b1:
-   recommendationpage()
+   if b1:
+      recommendationpage()
       
     
   
