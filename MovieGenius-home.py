@@ -31,7 +31,7 @@ if b:
     if (st.session_state['time'] == "limited"):
             tMax = st.session_state['minutes']
     m = mr.MovieRecommendationSystem()
-    recommended = m.recommend(for_kids, st.session_state['mood'], st.session_state['film_target'], tMax )
+    recommended = m.recommend(for_child, st.session_state['mood'], st.session_state['film_target'], tMax )
     listRecom = recommended['title'].values
     listOverview = []
     st.write(f'''
