@@ -10,7 +10,6 @@ def childpage():
         b1 = st.button('Go to recommendations')
         if b1:
             placeholder3.empty()
-            recommendationpage()
             
 def recommendationpage():
     placeholder4 = st.empty()
@@ -31,6 +30,7 @@ with placeholder.container():
 if (b and st.session_state.qwerty == "child"):
     placeholder.empty()
     childpage()
+    recommendationpage()
                     
             
                 
