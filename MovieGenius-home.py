@@ -6,7 +6,8 @@ def recommendationpage():
    placeholder3 = st.empty()
    with placeholder3.container():
     st.write('Film raccomandati')
-   
+    st.radio( "What do you want to feel by watching the movie?" , mood_list, key="asdfgh")
+    b3 = st.button('exit')
 
 def childpage():
    placeholder1 = st.empty()
