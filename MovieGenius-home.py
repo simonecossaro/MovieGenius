@@ -12,14 +12,14 @@ def adultpage():
    with placeholder2.container():
     st.radio( "What do you want to feel by watching the movie?" , mood_list, key="asdfgh")
         
-        st.text_input('Here you can name a movie similar to the one you want to watch (*optional*)', key="zxcvbn")
+    st.text_input('Here you can name a movie similar to the one you want to watch (*optional*)', key="zxcvbn")
                       
-        st.radio("How much time do you have?", ["infinite","limited"], key="minutes")
+    st.radio("How much time do you have?", ["infinite","limited"], key="minutes")
                       
-        b2 = st.button('Go to recommendations')
-        if b2:
-                      placeholder2.empty()
-                      st.write('Film raccomandati')
+    b2 = st.button('Go to recommendations')
+    if b2:
+         placeholder2.empty()
+         st.write('Film raccomandati')
     
 
 mood_list = ["laugh", "cry","love","adventure","fear","adrenaline","fantasy","science fiction","random"]
