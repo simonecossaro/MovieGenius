@@ -22,18 +22,7 @@ with placeholder.container():
 
 if (b and st.session_state.qwerty == "child"):
     placeholder.empty()
-    placeholder1 = st.empty()
-    with placeholder1.container():
-        st.text_input('Here you can name a movie similar to the one you want to watch (*optional*)', key="zxcvbn")                   
-        st.radio("How much time do you have?", ["infinite","limited"], key="minutes")
-        b1 = st.button('Go to recommendations')
-        if b1:
-            placeholder3 = st.empty()
-            placeholder1.empty()
-            with placeholder3.container():
-                st.write('Film raccomandati')
-                b3 = st.button('exit')
-         
+    recommendationpage()
                     
             
                 
