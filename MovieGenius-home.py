@@ -25,7 +25,7 @@ if (b and st.session_state.qwerty == "adult"):
     with placeholder2.container():
         st.radio( "What do you want to feel by watching the movie?" , mood_list, key="asdfgh")
         
-        st.text_input('Here you can name a movie similar to the one you want to watch' (*optional*)', key="zxcvbn")
+        st.text_input('Here you can name a movie similar to the one you want to watch (*optional*)', key="zxcvbn")
                       
         st.radio("How much time do you have?", ["infinite","limited"], key="minutes")
                       
