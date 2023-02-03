@@ -19,19 +19,20 @@ with placeholder.container():
              ''' , unsafe_allow_html=True)
   st.radio( "Are you an adult or a child?" , ["adult", "child"], key="qwerty")
   b = st.button('Next')
+
   if (b and st.session_state.qwerty == "child"):
    st.text_input('Here you can name a movie similar to the one you want to watch (*optional*)', key="zxcvbn")                   
    st.radio("How much time do you have?", ["infinite","limited"], key="minutes")
-   if st.button('Go to recommendations'):
-      placeholder.empty()
-      recommendationpage()
+   b1 = st.button('Go to recommendations')
+   
   if (b and st.session_state.qwerty == "adult"):
    st.radio( "What do you want to feel by watching the movie?" , mood_list, key="asdfgh")
    st.text_input('Here you can name a movie similar to the one you want to watch (*optional*)', key="zxcvbn")            
    st.radio("How much time do you have?", ["infinite","limited"], key="minutes")
-   if st.button('Go to recommendations'):
-      placeholder.empty()
-      recommendationpage()
+   b1 = st.button('Go to recommendations')
+
+if b1:
+   recommendationpage()
       
     
   
