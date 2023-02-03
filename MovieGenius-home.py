@@ -14,16 +14,16 @@ with placeholder.container():
 if (b and st.session_state.qwerty == "child"):
     placeholder.empty()
     placeholder1 = st.empty()
+    with placeholder1.container():
+      st.write('Hello child')
     
-with placeholder1.container():
-  st.write('Hello child')
-
 if (b and st.session_state.qwerty == "adult"):
     placeholder.empty()
     placeholder2 = st.empty()
+    with placeholder2.container():
+      st.write('Hello adult')
            
-with placeholder2.container():
-  st.write('Hello adult')
+
     
 
     
