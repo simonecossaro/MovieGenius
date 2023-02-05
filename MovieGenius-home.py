@@ -22,11 +22,10 @@ def checkInputUser(title):
             st.write(":warning: Incorrect title! You might looked for: ", mystring)
 
 ############################################################################
- def checkInputUserBoolean(title):
+def checkInputUserBoolean(title):
         if di.checkTitolo(title) or title=="":
             return True
-        else: 
-            return False 
+        return False
 ############################################################################
 def goToPage(mood, movie, time):
             if time =="limited":
