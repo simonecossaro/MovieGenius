@@ -23,7 +23,7 @@ def goToPage(mood, movie, time):
                                                      </a>
                                                  </center>
                                              <div class="btn">
-                                            ''' % (st.session_state.asdfgh, mood, movie, st.session_state.number), unsafe_allow_html=True)
+                                            ''' % (st.session_state.qwerty, mood, movie, st.session_state.number), unsafe_allow_html=True)
      
             else:
                 rec_botton = st.write(f'''
@@ -34,7 +34,7 @@ def goToPage(mood, movie, time):
                                                      </a>
                                                  </center>
                                              <div class="btn">
-                                            ''' % (st.session_state.asdfgh,mood, movie , 600), unsafe_allow_html=True)
+                                            ''' % (st.session_state.qwerty,mood, movie , 600), unsafe_allow_html=True)
             
             if rec_botton :
                         nav_to("https://simonecossaro-moviegenius-output-mv1sij.streamlit.app")
