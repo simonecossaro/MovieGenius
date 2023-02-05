@@ -10,12 +10,38 @@ def nav_to(url):
                     <meta http-equiv="refresh" content="0; url='%s'">
                  """ % (url)
     st.write(nav_script, unsafe_allow_html=True)
+    
+############################################################################
+def checkInputUser(title):
+        if di.checkTitolo(title) or title=="":
+            st.write("You  would like to see a movie similar to: ", title)
+        else:
+
+            mystring = ", ".join(di.forseCercavi(title))
+
+            st.write(":warning: Incorrect title! You might looked for: ", mystring)
+
+############################################################################
+ def checkInputUserBoolean(title):
+        if di.checkTitolo(title) or title=="":
+            return True
+        else: 
+            return False 
 ############################################################################
 def goToPage(mood, movie, time):
             if time =="limited":
                 st.slider('Select maximum minutes', 0, 360, 0, key="number" )
                 
-                rec_botton = st.write(f'''
+                if checkInputUserBoolean(movie)==False :
+                        rec_botton = st.write(f'''
+                                             <div class="div">
+                                                 <center>
+                                                         <button  disabled="disabled"> Go to prediction movies </button>
+                                                 </center>
+                                             <div class="btn">
+                                            ''', unsafe_allow_html=True)
+                else:
+                    rec_botton = st.write(f'''
                                              <div class="div">
                                                  <center>
                                                      <a href="https://simonecossaro-moviegenius-output-mv1sij.streamlit.app/?qwerty=%s/?asdfgh=%s/?zxcvbn=%s/?time=%s">
@@ -23,10 +49,18 @@ def goToPage(mood, movie, time):
                                                      </a>
                                                  </center>
                                              <div class="btn">
-                                            ''' % (st.session_state.qwerty, mood, movie, st.session_state.number), unsafe_allow_html=True)
-     
+                                            ''' % (st.session_state.qwerty, mood, movie, st.session_state.number), unsafe_allow_html=True)         
             else:
-                rec_botton = st.write(f'''
+                if checkInputUserBoolean(movie)==False :
+                        rec_botton = st.write(f'''
+                                             <div class="div">
+                                                 <center>
+                                                         <button  disabled="disabled"> Go to prediction movies </button>
+                                                 </center>
+                                             <div class="btn">
+                                            ''', unsafe_allow_html=True)
+                else:
+                    rec_botton = st.write(f'''
                                              <div class="div">
                                                  <center>
                                                      <a href="https://simonecossaro-moviegenius-output-mv1sij.streamlit.app/?qwerty=%s/?asdfgh=%s/?zxcvbn=%s/?time=%s">
@@ -35,12 +69,13 @@ def goToPage(mood, movie, time):
                                                  </center>
                                              <div class="btn">
                                             ''' % (st.session_state.qwerty,mood, movie , 600), unsafe_allow_html=True)
-            
+                    
             if rec_botton :
                         nav_to("https://simonecossaro-moviegenius-output-mv1sij.streamlit.app")
                     
 ############################################################################
-st.set_page_config(page_title="🎬Movie Genius", page_icon="🎬")
+
+st.set_page_config(page_title="🎬 Movie Genius", page_icon="🎬")
 
             
 mood_list = ["laugh", "cry","love","adventure","fear","adrenaline","fantasy","science fiction","random"]
@@ -53,11 +88,13 @@ with placeholder.container():
     st.radio( "Are you an adult or a child?" , ["child", "adult"], key='qwerty')
     if (st.session_state.qwerty == "child"):
         st.text_input('Which movie is similar to the one you want to watch? (*optional*)', key="zxcvbn")
+        checkInputUser(st.session_state.zxcvbn)
         st.session_state["asdfgh"] = None
         st.radio("How much time do you have?", ["infinite","limited"], key="time")
     else:
         st.radio('Which emotion would you like to try?', mood_list, key="asdfgh")
         st.text_input('Which movie is similar to the one you want to watch? (*optional*)', key="zxcvbn")
+        checkInputUser(st.session_state.zxcvbn)
         st.radio("How much time do you have?", ["infinite","limited"], key="time")
     
     goToPage(st.session_state.asdfgh, st.session_state.zxcvbn, st.session_state.time)
