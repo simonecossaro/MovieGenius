@@ -3,6 +3,7 @@ import MovieRecommendationSystem as mr
 import DatasetInspection as di
 import pandas as pd
 import numpy as np
+import base64
 
 ############################# REDIRECT TO PAGE  ############################
 def nav_to(url):
