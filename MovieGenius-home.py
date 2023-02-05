@@ -36,7 +36,8 @@ with placeholder.container():
                                                      </a>
                                                  </center>
                                              <div class="btn">
-                                            ''' % (False,mood, movie , 600), unsafe_allow_html=True)
+                                            ''' % (st.session_state['tipo'],st.session_state['mood'], st.session_state['film_target'] , st.session_state['time'],
+                                                  st.session_state['minutes']), unsafe_allow_html=True)
     
    
                         
