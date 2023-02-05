@@ -3,8 +3,11 @@ import MovieRecommendationSystem as mr
 import streamlit as st
 import DatasetInspection as di
 import numpy as np
+import MovieGenius-home as mg
 
 st.set_page_config(page_title="🎬 Movie Genius", page_icon="🎬")
+
+mg.set_background('cinema-bg.png')
 
 values = st.experimental_get_query_params()["qwerty"][0]
 
