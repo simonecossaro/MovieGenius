@@ -40,7 +40,7 @@ def goToPage(mood, movie, time):
                         nav_to("https://simonecossaro-moviegenius-output-mv1sij.streamlit.app")
                     
 ############################################################################
-st.set_page_config(page_title="Movie Genius", page_icon="🎬")
+st.set_page_config(page_title="🎬Movie Genius", page_icon="🎬")
 
             
 mood_list = ["laugh", "cry","love","adventure","fear","adrenaline","fantasy","science fiction","random"]
@@ -48,7 +48,7 @@ mood_list = ["laugh", "cry","love","adventure","fear","adrenaline","fantasy","sc
 placeholder = st.empty()
 with placeholder.container():
     st.write(f'''
-           <h1> Movie Genius </h1><h2> </h2>
+           <h1> Movie Genius 🎬</h1><h2> </h2>
           ''' , unsafe_allow_html=True)
     st.radio( "Are you an adult or a child?" , ["child", "adult"], key='qwerty')
     if (st.session_state.qwerty == "child"):
