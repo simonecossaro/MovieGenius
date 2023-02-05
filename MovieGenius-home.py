@@ -53,6 +53,7 @@ with placeholder.container():
     st.radio( "Are you an adult or a child?" , ["child", "adult"], key='qwerty')
     if (st.session_state.qwerty == "child"):
         st.text_input('Which movie is similar to the one you want to watch? (*optional*)', key="zxcvbn")
+        st.session_state["asdfgh"] = None
         st.radio("How much time do you have?", ["infinite","limited"], key="time")
     else:
         st.radio('Which emotion would you like to try?', mood_list, key="asdfgh")
