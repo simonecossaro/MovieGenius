@@ -22,25 +22,24 @@ with placeholder.container():
     st.write(f'''
            <h1> Movie Genius </h1><h2> </h2>
           ''' , unsafe_allow_html=True)
-    st.session_state['tipo'] = st.radio( "Are you an adult or a child?" , ["adult", "child"])
-    st.session_state['mood'] = st.radio('Which emotion would you like to try?', mood_list)
-    st.session_state['film_target'] = st.text_input('Which movie is similar to the one you want to watch? (*optional*)')
-    st.session_state['time'] = st.radio("How much time do you have?", ["infinite","limited"])
+    st.radio( "Are you an adult or a child?" , ["adult", "child"])
+    st.radio('Which emotion would you like to try?', mood_list, key="asdfgh")
+    st.text_input('Which movie is similar to the one you want to watch? (*optional*)', key="zxcvbn")
+    st.radio("How much time do you have?", ["infinite","limited"], key="time")
     if (st.session_state.time == "limited"):
-        st.session_state['minutes'] = st.slider('Select maximum minutes', 0, 360, 0)
+        st.slider('Select maximum minutes', 0, 360, 0, key="minutes" )
     b = st.write(f'''
                                              <div class="div">
                                                  <center>
-                                                     <a href="https://simonecossaro-moviegenius-output-mv1sij.streamlit.app">
+                                                     <a href="https://simonecossaro-moviegenius-output-mv1sij.streamlit.app/?qwerty=%s/?asdfgh=%s/?zxcvbn=%s/?time=%s/?minutes=%s">
                                                          <button> Go to prediction movies </button>
                                                      </a>
                                                  </center>
                                              <div class="btn">
-                                            ''' % (st.session_state['tipo'],st.session_state['mood'], st.session_state['film_target'] , st.session_state['time'],
-                                                  st.session_state['minutes']), unsafe_allow_html=True)
+                                            ''' % (st.session_state.qwerty,st.session_state.asdfgh, st.session_state.zxcvbn, st.session_state.time,
+                                                  st.session_state.minutes), unsafe_allow_html=True)
     
    
                         
-         
 
      
