@@ -31,7 +31,7 @@ with placeholder.container():
     b = st.write(f'''
                                              <div class="div">
                                                  <center>
-                                                     <a href="https://ldovu-movie-recommendation-outputpageadult-45fjq9.streamlit.app/?qwerty=%s/?asdfgh=%s/?zxcvbn=%s/?time=%s">
+                                                     <a href="https://simonecossaro-moviegenius-output-mv1sij.streamlit.app">
                                                          <button> Go to prediction movies </button>
                                                      </a>
                                                  </center>
