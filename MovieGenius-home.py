@@ -28,11 +28,16 @@ with placeholder.container():
     st.session_state['time'] = st.radio("How much time do you have?", ["infinite","limited"])
     if (st.session_state.time == "limited"):
         st.session_state['minutes'] = st.slider('Select maximum minutes', 0, 360, 0)
-    b = st.button('Go to recommendations')
+    b = st.write(f'''
+                                             <div class="div">
+                                                 <center>
+                                                     <a href="https://ldovu-movie-recommendation-outputpageadult-45fjq9.streamlit.app/?qwerty=%s/?asdfgh=%s/?zxcvbn=%s/?time=%s">
+                                                         <button> Go to prediction movies </button>
+                                                     </a>
+                                                 </center>
+                                             <div class="btn">
+                                            ''' % (False,mood, movie , 600), unsafe_allow_html=True)
     
-if b:
-    nav_to('https://simonecossaro-moviegenius-output-mv1sij.streamlit.app')
-        
    
                         
          
