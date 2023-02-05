@@ -4,7 +4,7 @@ import streamlit as st
 import DatasetInspection as di
 import numpy as np
 
-st.set_page_config(page_title="Movie Genius", page_icon="🎬")
+st.set_page_config(page_title="🎬 Movie Genius", page_icon="🎬")
 
 values = st.experimental_get_query_params()["qwerty"][0]
 
@@ -31,7 +31,7 @@ listRecom = recommended['title'].values
 listOverview = []
 
 st.write(f'''
-                 <h1> Movie Genius </h1><h2> Recommended movies: </h2>
+                 <h1> Movie Genius 🎬 </h1><h2> Recommended movies: </h2>
              ''' , unsafe_allow_html=True)
 
 
