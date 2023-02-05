@@ -4,7 +4,8 @@ import MovieRecommendationSystem as mr
 
 st.write('Recommended movies')
 
-values = st.experimental_get_query_params()["qwerty"][0]
-list1 = values.split('/?')
-
-st.write(list1)
+st.write(st.session_state.qwerty)
+st.write(st.session_state.asdfgh)
+st.write(st.session_state.zxcvbn)
+st.write(st.session_state.time)
+st.write(st.session_state.minutes)
