@@ -26,7 +26,7 @@ for_kids = False
 if (child == 'child'):
   for_kids = True
   
-m = mrs.MovieRecommendationSystem()
+m = mr.MovieRecommendationSystem()
 recommended = m.recommend(for_kids, mood, film_target , Tmax )
 
 listRecom = recommended['title'].values
