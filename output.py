@@ -4,6 +4,8 @@ import streamlit as st
 import DatasetInspection as di
 import numpy as np
 
+st.set_page_config(page_title="Movie Genius", page_icon="🎬")
+
 values = st.experimental_get_query_params()["qwerty"][0]
 
 
