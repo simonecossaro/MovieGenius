@@ -94,7 +94,7 @@ def set_background(png_file):
 
 st.set_page_config(page_title="🎬 Movie Genius", page_icon="🎬")
 
-set_background()
+set_background(MovieGenius.png)
 
             
 mood_list = ["laugh", "cry","love","adventure","fear","adrenaline","fantasy","science fiction","random"]
