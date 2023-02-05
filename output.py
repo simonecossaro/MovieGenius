@@ -25,9 +25,11 @@ st.write(time)
 for_kids = False
 if (child == 'child'):
   for_kids = True
+Tmax = int(time)
+
   
 m = mr.MovieRecommendationSystem()
-recommended = m.recommend(for_kids, mood, film_target , time )
+recommended = m.recommend(for_kids, mood, film_target , Tmax )
 
 listRecom = recommended['title'].values
 
