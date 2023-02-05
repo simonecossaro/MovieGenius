@@ -40,7 +40,7 @@ def goToPage(mood, movie, time):
                         nav_to("https://simonecossaro-moviegenius-output-mv1sij.streamlit.app")
                     
 ############################################################################
-st.set_page_config(page_title="MovieGenius")
+st.set_page_config(page_title="Movie Genius", page_icon="🎬")
 
             
 mood_list = ["laugh", "cry","love","adventure","fear","adrenaline","fantasy","science fiction","random"]
