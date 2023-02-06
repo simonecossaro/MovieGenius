@@ -112,7 +112,7 @@ with placeholder.container():
         st.session_state["asdfgh"] = None
         st.radio("How much time do you have?", ["infinite","limited"], key="time")
     else:
-        st.radio('Which emotion would you like to try?', mood_list, key="asdfgh")
+        st.radio('Which emotion would you like to feel?', mood_list, key="asdfgh")
         st.text_input('Which movie is similar to the one you want to watch? (*optional*)', key="zxcvbn")
         checkInputUser(st.session_state.zxcvbn)
         st.radio("How much time do you have?", ["infinite","limited"], key="time")
